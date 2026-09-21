@@ -1,0 +1,1 @@
+https://www.fema.gov/api/open/v2/DisasterDeclarationsSummaries?$select=disasterNumber,incidentType,designatedArea,declarationDate&$filter=contains(designatedArea,%27Philadelphia%27)&$orderby=declarationDate%20desc&$top=3
