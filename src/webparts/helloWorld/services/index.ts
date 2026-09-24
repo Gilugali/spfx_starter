@@ -18,8 +18,15 @@ export function getLists(
   const url: string = `${context.pageContext.web.absoluteUrl}/_api/web/lists`;
   return context.spHttpClient
     .get(url, SPHttpClient.configurations.v1)
-    .then((response: SPHttpClientResponse) => response.json())
-    .then((data) => {
+    .then((response: SPHttpClientResponse) => {
+      if (!response.ok) {
+        throw new Error(
+          `Request failed with status ${response.status}. Check .spfx-workbench/api-mocks.json.`,
+        );
+      }
+      return response.json();
+    })
+    .then((data: IDisasterDeclarationsSummariesResponse) => {
       if (Math.random() < 0.5) {
         throw new Error("Failed to fetch distater summary data.");
       }

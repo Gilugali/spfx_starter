@@ -1,36 +1,51 @@
 {
-  "metadata": {
-    "skip": 0,
-    "select": "disasterNumber, incidentType, designatedArea, declarationDate",
-    "rundate": "2026-09-21T06:59:17.856Z",
-    "top": 3,
-    "filter": "contains(designatedArea,'Philadelphia')",
-    "format": "json",
-    "metadata": true,
-    "orderby": "declarationDate DESC",
-    "entityname": "DisasterDeclarationsSummaries",
-    "version": "v2",
-    "url": "/api/open/v2/DisasterDeclarationsSummaries?$select=disasterNumber,incidentType,designatedArea,declarationDate&$filter=contains(designatedArea,%27Philadelphia%27)&$orderby=declarationDate%20desc&$top=3",
-    "count": 0
-  },
-  "DisasterDeclarationsSummaries": [
+  "delay": 0,
+  "rules": [
     {
-      "disasterNumber": 4618,
-      "incidentType": "Hurricane",
-      "designatedArea": "Philadelphia (County)",
-      "declarationDate": "2021-09-10T00:00:00.000Z"
-    },
-    {
-      "disasterNumber": 4506,
-      "incidentType": "Biological",
-      "designatedArea": "Philadelphia (County)",
-      "declarationDate": "2020-03-30T00:00:00.000Z"
-    },
-    {
-      "disasterNumber": 3441,
-      "incidentType": "Biological",
-      "designatedArea": "Philadelphia (County)",
-      "declarationDate": "2020-03-13T00:00:00.000Z"
+      "match": {
+        "url": "/_api/web/lists",
+        "method": "GET"
+      },
+      "response": {
+        "status": 200,
+        "headers": { "content-type": "application/json;odata=verbose" },
+        "body": {
+          "metadata": {
+            "skip": 0,
+            "select": "disasterNumber, incidentType, designatedArea, declarationDate",
+            "rundate": "2026-09-21T06:59:17.856Z",
+            "top": 3,
+            "filter": "contains(designatedArea,'Philadelphia')",
+            "format": "json",
+            "metadata": true,
+            "orderby": "declarationDate DESC",
+            "entityname": "DisasterDeclarationsSummaries",
+            "version": "v2",
+            "url": "/api/open/v2/DisasterDeclarationsSummaries?$select=disasterNumber,incidentType,designatedArea,declarationDate&$filter=contains(designatedArea,%27Philadelphia%27)&$orderby=declarationDate%20desc&$top=3",
+            "count": 0
+          },
+          "DisasterDeclarationsSummaries": [
+            {
+              "disasterNumber": 4618,
+              "incidentType": "Hurricane",
+              "designatedArea": "Philadelphia (County)",
+              "declarationDate": "2021-09-10T00:00:00.000Z"
+            },
+            {
+              "disasterNumber": 4506,
+              "incidentType": "Biological",
+              "designatedArea": "Philadelphia (County)",
+              "declarationDate": "2020-03-30T00:00:00.000Z"
+            },
+            {
+              "disasterNumber": 3441,
+              "incidentType": "Biological",
+              "designatedArea": "Philadelphia (County)",
+              "declarationDate": "2020-03-13T00:00:00.000Z"
+            }
+          ]
+        }
+      }
     }
   ]
 }

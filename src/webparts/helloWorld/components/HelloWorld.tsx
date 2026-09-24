@@ -103,6 +103,7 @@ const HelloWorld = (props: IHelloWorldProps): JSX.Element => {
               {data?.DisasterDeclarationsSummaries?.map(
                 (disaster: IDisaster) => (
                   <li key={disaster.disasterNumber}>
+                    #{disaster.disasterNumber}{" "}
                     <strong>{disaster.incidentType}</strong> :{" "}
                     {disaster.designatedArea} (
                     {new Date(disaster.declarationDate).toLocaleDateString()})
